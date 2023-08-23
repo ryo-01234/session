@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'time'
-Tune.create(name: "The Kesh", rhythm: "jig", add_date: "20200101000000")
-Tune.create(name: "John Ryan", rhythm: "polka", add_date: "20200210081253")
-Tune.create(name: "Fisher's", rhythm: "hornpipe", add_date: "20190529135603")
-Tune.create(name: "Tam Lin", rhythm: "reel", add_date: "20210507163120")
-Tune.create(name: "A Fig For A Kiss", rhythm: "slipjig", add_date: "20221223213451")
+Tune.create(name: "The Kesh", rhythm: "Jig", add_date: "20200101000000")
+Tune.create(name: "John Ryan", rhythm: "Polka", add_date: "20200210081253")
+Tune.create(name: "Fisher's", rhythm: "Hornpipe", add_date: "20190529135603")
+Tune.create(name: "Tam Lin", rhythm: "Reel", add_date: "20210507163120")
+Tune.create(name: "A Fig For A Kiss", rhythm: "Slipjig", add_date: "20221223213451")
 
 User.create(name: "関西アイリッシュセッション", pref: "大阪", date: "第3土曜日　21時〜", create_date: "20181010132431")
 User.create(name: "関東アイルランド音楽セッション会", pref: "東京", date: "毎週水曜日の夜(時間不定)", create_date: "20170421173140")

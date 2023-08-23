@@ -1,6 +1,10 @@
 class TunesController < ApplicationController
   def index
-    
+    if params[:tune_name].blank? && params[:user_name].blank? && params[:key] == "all" && params[:rhythm] == "all"
+      @tunes = Tune.order("name")
+    else
+      @tunes = Tune.search(params)
+    end
   end
 
   def show
@@ -20,4 +24,7 @@ class TunesController < ApplicationController
 
   def destroy
   end
+
+  private
+
 end

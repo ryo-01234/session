@@ -1,11 +1,10 @@
 <h1>日本セッション</h1>
 <p>日本各地のアイリッシュ・セッションの定番を共有して、セッションをもっと楽しむためのサイト</p>
 
-<%= form_with url: "tunes#index" do |form| %>
+<%= form_with url: tunes_path, method: :get do |form| %>
 <%= form.text_field :tune_name %><br />
 <%= form.select :key, @keys %><br />
 <%= form.select :rhythm, @rhythms %><br />
 <%= form.text_field :user_name %><br />
 <%= submit_tag "検索" %>
 <% end %>
-<p>※いずれの項目も任意です</p>
