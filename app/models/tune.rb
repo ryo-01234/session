@@ -8,8 +8,7 @@ class Tune < ApplicationRecord
         rel = rel.where("name LIKE ? OR alt_name LIKE ?", "%#{query[:tune_name]}%", "%#{query[:tune_name]}%")
       end
       if query[:key].present? && query[:key] != "all"
-        rel = rel.joins(:notes).where(key: query[:key])
-#       rel = rel.where("key ? INNER JOIN notes ON tunes.id = notes.tune_id", query[:key])
+        rel = rel.joins(:notes).merge(Note.where(key: query[:key])).distinct
       end
       if query[:rhythm].present? && query[:rhythm] != "all"
         rel = rel.where(rhythm: query[:rhythm])
