@@ -7,10 +7,10 @@ class Tune < ApplicationRecord
       if query[:tune_name].present?
         rel = rel.where("name LIKE ? OR alt_name LIKE ?", "%#{query[:tune_name]}%", "%#{query[:tune_name]}%")
       end
-      if query[:key].present? && query[:key] != "all"
+      if query[:key] != "all"
         rel = rel.joins(:notes).merge(Note.where(key: query[:key])).distinct
       end
-      if query[:rhythm].present? && query[:rhythm] != "all"
+      if query[:rhythm] != "all"
         rel = rel.where(rhythm: query[:rhythm])
       end
 #     if query[:user_name].present?

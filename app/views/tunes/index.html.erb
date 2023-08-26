@@ -1,0 +1,10 @@
+<h1>Result</h1>
+<% if @tunes.present? %>
+  <dl class="search_result">
+    <% @tunes.each do |tune| %>
+    <dt><%= link_to tune.name, tune %></dt>
+    <dd><%= tune.rhythm %></dd>
+    <% end %>
+  </dl>
+<% end %>
+<%= link_to "Top", root_path %>

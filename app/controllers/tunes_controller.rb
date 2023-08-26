@@ -8,6 +8,7 @@ class TunesController < ApplicationController
   end
 
   def show
+    @tune = Tune.find(params[:id])
   end
 
   def new

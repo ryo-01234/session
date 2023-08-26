@@ -1,0 +1,26 @@
+<script>
+  import abcjs from "abcjs/midi";
+  import 'abcjs/abcjs-audio.css';
+</script>
+<h1><%= @tune.name %></h1>
+<h2><%= @tune.rhythm %></h2>
+<p><%= @tune.memo if @tune.memo.present? %></p>
+
+<% @tune.notes.each_with_index do |note,idx| %>
+<h3><%= idx + 1 %></h3>
+<P>
+作成者:<%= note.user.name %>
+</p>
+<%= h(note.abc).gsub("\n", "<br />").html_safe %>
+<br />
+<%= note.memo if note.memo.present? %>
+<div id="paper"></div>
+<br />
+<script>
+abcjs.renderAbc("paper", ${note.abc});
+abcjs.renderMidi("paper", ${note.abc})
+</script>
+<% end %>
+
+<%= link_to "戻る", :back %>
+<%= link_to "Top", root_path %>
