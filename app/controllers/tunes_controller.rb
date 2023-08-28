@@ -1,6 +1,6 @@
 class TunesController < ApplicationController
   def index
-    if params[:tune_name].blank? && params[:user_name].blank? && params[:key] == "all" && params[:rhythm] == "all"
+    if params[:tune_name].blank? && params[:user_name].blank? && params[:key] == "all" && params[:scale] == "all" && params[:rhythm] == "all"
       @tunes = Tune.order("name")
     else
       @tunes = Tune.search(params)

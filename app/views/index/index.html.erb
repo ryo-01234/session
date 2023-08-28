@@ -4,7 +4,21 @@
 <%= form_with url: tunes_path, method: :get do |form| %>
 <%= form.text_field :tune_name %><br />
 <%= form.select :key, @keys %><br />
+<%= form.select :scale, @scales %><br />
 <%= form.select :rhythm, @rhythms %><br />
 <%= form.text_field :user_name %><br />
 <%= submit_tag "検索" %>
 <% end %>
+
+<h2>Recent Update</h2>
+<dl>
+  <% @recents.each do |recent| %>
+    <dt>
+      <%= link_to recent.tune.name, tune_path(recent.tune) %>
+    </dt>
+    <dd>
+      <%= recent.tune.rhythm %>
+      by <%= recent.user.name %>
+    </dd>
+  <% end %>
+</dl>

@@ -1,7 +1,8 @@
 class IndexController < ApplicationController
   def index
-  #  @recent = Notes.order(add_date)
-  @keys = ["all", "C", "D", "E", "F", "G", "A", "B", "Cm", "Dm", "Em", "Fm", "Gm", "Am", "Bm"]
-  @rhythms = ["all", "Jig", "Reel","Polka","Hornpipe", "Slipjig"]
+  @recents = Note.order(add_date: :desc).limit(5)
+  @keys = ["all"].concat(Note.pluck(:key).uniq)
+  @scales = ["all"].concat(Note.pluck(:scale).uniq)
+  @rhythms = ["all"].concat(Tune.pluck(:rhythm).uniq)
   end
 end

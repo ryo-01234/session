@@ -10,6 +10,9 @@ class Tune < ApplicationRecord
       if query[:key] != "all"
         rel = rel.joins(:notes).merge(Note.where(key: query[:key])).distinct
       end
+      if query[:scale] != "all"
+        rel = rel.joins(:notes).merge(Note.where(scale: query[:scale])).distinct
+      end
       if query[:rhythm] != "all"
         rel = rel.where(rhythm: query[:rhythm])
       end
