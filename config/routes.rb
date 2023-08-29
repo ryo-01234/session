@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :tunes
   resources :notes
   resources :playlists
-  resource :users
+  resources :users
 
-
+  resource :session, only: [:create, :destroy]
 end

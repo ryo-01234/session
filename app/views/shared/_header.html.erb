@@ -1,0 +1,12 @@
+<%= render "shared/login_form" unless current_user %>
+<% if current_user %>
+<% if flash.alert %>
+  <p class="alert">
+    <%= flash.alert %>
+  </p>
+<% end %>
+  <ul class="account-menu">
+    <%= "Logging in " + current_user.name %>
+    <%= link_to "ログアウト", :session, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" } %>
+  </ul>
+<% end %>

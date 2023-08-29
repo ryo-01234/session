@@ -12,8 +12,8 @@ Tune.create(name: "Fisher's", rhythm: "Hornpipe", add_date: "20190529135603")
 Tune.create(name: "Tam Lin", rhythm: "Reel", add_date: "20210507163120")
 Tune.create(name: "A Fig For A Kiss", rhythm: "Slip Jig", add_date: "20221223213451")
 
-User.create(name: "関西アイリッシュセッション", pref: "大阪", date: "第3土曜日　21時〜", create_date: "20181010132431")
-User.create(name: "関東アイルランド音楽セッション会", pref: "東京", date: "毎週水曜日の夜(時間不定)", create_date: "20170421173140")
+User.create(name: "関西アイリッシュセッション", pref: "大阪", date: "第3土曜日　21時〜", create_date: "20181010132431", user_id: "ksis", password: "kansaiyd", password_confirmation: "kansaiyd")
+User.create(name: "関東アイルランド音楽セッション会", pref: "東京", date: "毎週水曜日の夜(時間不定)", create_date: "20170421173140", user_id: "eims", password: "kantou23", password_confirmation: "kantou23")
 
 Note.create(tune_id: 1, user_id: 1, key: "G", scale: "maj", abc:"T: The Kesh\nR: jig\nM: 6/8\nL: 1/8\nK: Gmaj\n|:G3 GAB|A3 ABd|edd gdd|edB dBA|\nGAG GAB|ABA ABd|edd gdd|BAF G3:|\n|:B2B d2d|ege dBA|B2B dBG|ABA AGA|\nBAB d^cd|ege dBd|gfg aga|bgg g3:| ", add_date: "20200101013120")
 Note.create(tune_id: 2, user_id: 2, key: "D", scale: "maj", abc:"T: John Ryan's\nR: polka\nM: 2/4\nL: 1/8\nK: Dmaj\n|:dd B/c/d/B/|AF AF|dd B/c/d/B/|AF ED|\ndd B/c/d/B/|AF Ad/e/|fd ec|1 df d2:|2 df dd/e/||\n|:fd de/f/|g>f ed/e/|fd Ad|fd/f/ a>g|\nfd- de/f/|g/a/g/f ed/e/|fd ed/c/|1 d2 d>e:|2 d2 d2|| ", add_date: "20200210083126")
