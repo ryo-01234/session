@@ -1,0 +1,47 @@
+<%= form_with model: @user do |f| %>
+  <dl>
+    <dt>
+      <%= f.label :user_id %>
+      <p>ログインで使用します</p>
+    </dt>
+    <dd>
+      <%= f.text_field :user_id %>
+    </dd>
+    <dt>
+      <%= f.label :password %>
+      <p>5文字以上の半角英数字</p>
+    </dt>
+    <dd>
+      <%= f.text_field :password %>
+    </dd>
+    <dt>
+      <%= f.label :name %>
+      <p>検索結果などに表示されます</p>
+    </dt>
+    <dd>
+      <%= f.text_field :name %>
+    </dd>
+    <dt>
+      <%= f.label :pref %>
+      <p>都道府県だけでもOK。秘密主義な方は「非公開」と入力してください</p>
+    </dt>
+    <dd>
+      <%= f.text_field :pref %>
+    </dd>
+    <dt>
+      <%= f.label :date %>
+      <p>「非公開」とか「不定期」とかでもOK</p>
+    </dt>
+    <dd>
+      <%= f.text_field :date %>
+    </dd>
+    <dt>
+      <%= f.label :memo %>
+      <p>任意項目。なんでもOK</p>
+    </dt>
+    <dd>
+      <%= f.text_area :memo %>
+    </dd>
+  </dl>
+  <%= f.submit "登録" %>
+<% end %>

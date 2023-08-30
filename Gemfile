@@ -33,6 +33,10 @@ gem 'erubis'
 
 gem 'jquery-rails'
 
+gem 'abcjs-rails'
+
+#gem 'raphael-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

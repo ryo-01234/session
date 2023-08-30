@@ -2,6 +2,7 @@
 <h2><%= @tune.rhythm %></h2>
 <p><%= @tune.memo if @tune.memo.present? %></p>
 
+<script>let abc;</script>
 <% @tune.notes.each_with_index do |note,idx| %>
   <h3><%= idx + 1 %></h3>
   <p>作成者:<%= note.user.name %></p>
@@ -11,11 +12,10 @@
   <%= note.memo if note.memo.present? %>
   <div id="paper" class="score">
     <script>
-        let abc = `<%= note.abc.gsub("\n","\\n") %>`;
-        abcjs.renderAbc("paper", abc);
+        abc = `<%= note.abc.gsub("\n","\\n") %>`;
+        ABCJS.renderAbc("paper", abc);
     </script>
   </div>
 <% end %>
 
-<%= link_to "戻る", :back %>
-<%= link_to "Top", root_path %>
+<%= render "shared/search_form" %>

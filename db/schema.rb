@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_101705) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_30_101224) do
   create_table "notes", force: :cascade do |t|
     t.integer "tune_id", null: false
     t.integer "user_id", null: false
@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_101705) do
     t.string "abc", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "add_date", null: false
     t.string "scale", null: false
     t.index ["tune_id"], name: "index_notes_on_tune_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
@@ -40,7 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_101705) do
     t.string "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "add_date", null: false
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
@@ -51,7 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_101705) do
     t.string "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "add_date", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,8 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_101705) do
     t.string "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "create_date", null: false
-    t.datetime "update_date"
     t.string "password_digest"
     t.string "remember_digest"
     t.string "user_id", null: false

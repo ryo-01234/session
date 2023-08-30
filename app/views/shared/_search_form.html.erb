@@ -1,0 +1,8 @@
+<%= form_with url: tunes_path, method: :get do |f| %>
+<%= f.text_field :tune_name %><br />
+<%= f.select :key, $key_selector %>
+<%= f.select :scale, $scale_selector %><br />
+<%= f.select :rhythm, $rhythm_selector %><br />
+<%= f.text_field :user_name %><br />
+<%= submit_tag "検索" %>
+<% end %>

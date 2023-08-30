@@ -1,9 +1,11 @@
 <h4>Log In</h4>
+
 <% if flash.alert %>
   <p class="alert">
     <%= flash.alert %>
   </p>
 <% end %>
+
 <%= form_with url: :session, id: "login_form" do %>
 
   <label>ユーザーID</label>
@@ -14,3 +16,5 @@
 
   <input type="submit" value="ログイン">
 <% end %>
+
+<%= link_to "会員登録", new_user_path %>
