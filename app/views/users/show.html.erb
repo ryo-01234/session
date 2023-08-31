@@ -1,0 +1,43 @@
+<% if flash.notice %>
+  <p class="notice">
+    <%= flash.notice %>
+  </p>
+<% end %>
+<dl>
+    <dt>
+      <%= :user_id %>
+    </dt>
+    <dd>
+      <%= @user.user_id %>
+    </dd>
+    <dt>
+      <%= :password %>
+    </dt>
+    <dd>
+      ※パスワードは非表示としています
+    </dd>
+    <dt>
+      <%= :name %>
+    </dt>
+    <dd>
+      <%= @user.name %>
+    </dd>
+    <dt>
+      <%= :pref %>
+    </dt>
+    <dd>
+      <%= @user.pref %>
+    </dd>
+    <dt>
+      <%= :date %>
+    </dt>
+    <dd>
+      <%= @user.date %>
+    </dd>
+    <dt>
+      <%= :memo %>
+    </dt>
+    <dd>
+      <%= @user.memo %>
+    </dd>
+  </dl>

@@ -3,7 +3,16 @@
     <%= flash.alert %>
   </p>
 <% end %>
-  <ul class="account-menu">
-    <li><%= "Logging in " + current_user.name %></li>
-    <li><%= button_to "ログアウト", :session, method: :delete, data: { confirm: "ログアウトしますか？" } %></li>
+<ul class="account-menu">
+  <li>Logging in <span id="user_popup"><%= current_user.name %></li>
+  <li><%= button_to "ログアウト", :session, method: :delete %>
+  <%#= link_to "ログアウト", :session, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" } %></li>
+</ul>
+
+<nav id="user_popup_menu">
+  <ul>
+    <li><%= link_to "会員情報の確認", user_path(current_user) %></li>
+    <li><%= link_to "会員情報の編集", edit_user_path(current_user) %></li>
+    <li><%= link_to "ログアウト", :session, data:{ turbo_method: :delete, turbo_confirm: "ログアウトしますか?" } %></li>
   </ul>
+</nav>
