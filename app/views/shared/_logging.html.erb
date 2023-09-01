@@ -5,8 +5,7 @@
 <% end %>
 <ul class="account-menu">
   <li>Logging in <span id="user_popup"><%= current_user.name %></li>
-  <li><%= button_to "ログアウト", :session, method: :delete %>
-  <%#= link_to "ログアウト", :session, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" } %></li>
+  <li><%= button_to "ログアウト", :session, method: :delete %></li>
 </ul>
 
 <nav id="user_popup_menu">
