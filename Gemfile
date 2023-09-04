@@ -27,11 +27,15 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "jsbundling-rails"
+
+gem "cssbundling-rails"
+
 #gem 'requirejs-rails'
 
-gem 'erubis'
+#gem 'erubis'
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 gem 'abcjs-rails'
 

@@ -41,3 +41,16 @@
       <%= @user.memo %>
     </dd>
   </dl>
+
+  <h2><%= @user.name %>が作成したABC譜</h2>
+<% @note.each_with_index do |note, idx| %>
+<div>
+<%= note.tune.name %>
+<%= note.tune.rhythm %>
+<%= note.key %>
+<%= note.scale %>
+<%= note.status %>
+<%= link_to "編集", edit_note_path(id: note.id, user_id: @user.id, ref: "user" ) %>
+<%= link_to "削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。削除してよろしいですか?"} %>
+</div>
+<% end %>

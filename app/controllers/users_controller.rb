@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @note = Note.where(user_id: params[:id])
+    @status = ["public", "draft"]
   end
 
   def new

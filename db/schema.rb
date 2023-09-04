@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_30_101224) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_095957) do
   create_table "notes", force: :cascade do |t|
     t.integer "tune_id", null: false
     t.integer "user_id", null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_101224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "scale", null: false
+    t.string "status", null: false
     t.index ["tune_id"], name: "index_notes_on_tune_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
   end

@@ -1,0 +1,35 @@
+<dl>
+    <dt>
+      <%= f.label :status %>
+    </dt>
+    <dd>
+      <%= f.select :status, @status %>
+    </dd>
+    <dt>
+      <%= f.label :key %>
+    </dt>
+    <dd>
+      <%= f.text_field :key %>
+    </dd>
+    <dt>
+      <%= f.label :scale %>
+    </dt>
+    <dd>
+      <%= f.text_field :scale %>
+    </dd>
+    <dt>
+      <%= f.label :memo %>
+    </dt>
+    <dd>
+      <%= f.text_area :memo %>
+    </dd>
+    <dt>
+      <%= f.label :abc %>
+    </dt>
+    <dd>
+      <%= f.text_area :abc %>
+    </dd>
+  </dl>
+  <%= hidden_field_tag :ref, @ref %>
+  <%= hidden_field_tag :user_id, @user_id %>
+  <%= hidden_field_tag :tune_id, @tune_id %>

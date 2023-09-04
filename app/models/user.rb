@@ -2,6 +2,13 @@ class User < ApplicationRecord
   has_secure_password
   has_many :notes
 
+
+
+
+
+
+#ここからRemember me実装のためのメソッド
+
   attr_accessor :remember_token
 
   def self.new_token
@@ -25,4 +32,7 @@ class User < ApplicationRecord
   def forget_me
     update_attribute(:remember_digest, nil)
   end
+
+#ここまでRemember me実装のためのメソッド
+
 end

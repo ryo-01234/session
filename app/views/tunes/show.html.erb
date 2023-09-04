@@ -1,9 +1,15 @@
+<% if flash.notice %>
+  <p class="notice">
+    <%= flash.notice %>
+  </p>
+<% end %>
+
 <h1><%= @tune.name %></h1>
 <h2><%= @tune.rhythm %></h2>
 <p><%= @tune.memo if @tune.memo.present? %></p>
-
+<%= link_to "楽曲情報の編集", edit_tune_path %>
 <script>let abc;</script>
-<% @tune.notes.each_with_index do |note,idx| %>
+<% @note.each_with_index do |note,idx| %>
   <h3><%= idx + 1 %></h3>
   <p>作成者:<%= note.user.name %></p>
   <div class="abc">
@@ -16,6 +22,12 @@
         ABCJS.renderAbc("paper", abc);
     </script>
   </div>
+  <% if note.user.id == current_user&.id %>
+  <%=link_to "ABC譜の編集", edit_note_path %>
+  <%=link_to "ABC譜の削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。\n削除してよろしいですか?" }%>
+  <% end %>
 <% end %>
-
+<% if current_user %>
+<%=link_to "ABC譜の登録", new_note_path(tune_id: @tune.id, tune_name: @tune.name, user_id: current_user.id) %>
+<% end %>
 <%= render "shared/search_form" %>
