@@ -7,11 +7,13 @@
 <h1><%= @tune.name %></h1>
 <h2><%= @tune.rhythm %></h2>
 <p><%= @tune.memo if @tune.memo.present? %></p>
+<%if current_user%>
 <%= link_to "楽曲情報の編集", edit_tune_path %>
+<% end %>
 <script>let abc;</script>
 <% @note.each_with_index do |note,idx| %>
   <h3><%= idx + 1 %></h3>
-  <p>作成者:<%= note.user.name %></p>
+  <p>作成者:<%= link_to note.user.name, info_user_path(note.user.id) %></p>
   <div class="abc">
     <%= h(note.abc).gsub("\n", "<br />").html_safe %>
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_095957) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_122231) do
   create_table "notes", force: :cascade do |t|
     t.integer "tune_id", null: false
     t.integer "user_id", null: false
@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_095957) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
-    t.string "user_id", null: false
+    t.string "login_id", null: false
   end
 
 end

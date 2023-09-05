@@ -5,10 +5,10 @@
 <% end %>
 <dl>
     <dt>
-      <%= :user_id %>
+      <%= :login_id %>
     </dt>
     <dd>
-      <%= @user.user_id %>
+      <%= @user.login_id %>
     </dd>
     <dt>
       <%= :password %>
@@ -45,7 +45,7 @@
   <h2><%= @user.name %>が作成したABC譜</h2>
 <% @note.each_with_index do |note, idx| %>
 <div>
-<%= note.tune.name %>
+<%= link_to note.tune.name, tune_path(note.tune.id) %>
 <%= note.tune.rhythm %>
 <%= note.key %>
 <%= note.scale %>

@@ -1,0 +1,31 @@
+<h1><%= @user.name %></h1>
+<dl>
+    <dt>
+      <%= :pref %>
+    </dt>
+    <dd>
+      <%= @user.pref %>
+    </dd>
+    <dt>
+      <%= :date %>
+    </dt>
+    <dd>
+      <%= @user.date %>
+    </dd>
+    <dt>
+      <%= :memo %>
+    </dt>
+    <dd>
+      <%= @user.memo %>
+    </dd>
+  </dl>
+
+  <h2><%= @user.name %>が作成したABC譜</h2>
+<% @note.each_with_index do |note, idx| %>
+<div>
+<%= link_to note.tune.name, tune_path(note.tune.id) %>
+<%= note.tune.rhythm %>
+<%= note.key %>
+<%= note.scale %>
+</div>
+<% end %>

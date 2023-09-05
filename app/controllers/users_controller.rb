@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   private def user_params
     attrs = [
-      :user_id,
+      :login_id,
       :name,
       :pref,
       :date,
@@ -10,6 +10,11 @@ class UsersController < ApplicationController
     ]
     attrs << :password if params[:action] == "create"
     params.require(:user).permit(attrs)
+  end
+
+  def info
+    @user = User.find(params[:id])
+    @note = Note.where(user_id: params[:id]).where(status: "public")
   end
 
   def show
@@ -23,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(user_id: session[:user_id])
+    @user = User.find_by(login_id: session[:login_id])
   end
 
   def create

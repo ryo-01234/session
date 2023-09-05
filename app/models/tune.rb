@@ -3,22 +3,30 @@ class Tune < ApplicationRecord
 
   class << self
     def search(query)
-      rel = order("name")
+      rel = Tune.order("name")
       if query[:tune_name].present?
-        rel = rel.where("name LIKE ? OR alt_name LIKE ?", "%#{query[:tune_name]}%", "%#{query[:tune_name]}%")
+        t_word = query[:tune_name].split(/[[:blank:]]+/)
+        t_word.each { |word|
+        rel = rel.where("REPLACE(REPLACE(name,' ',''),' ', '') LIKE ? OR REPLACE(REPLACE(alt_name,' ',''),' ', '') LIKE ?", "%#{word}%", "%#{word}%")
+      }
+        rel = rel.distinct
       end
-      if query[:key] != "all"
+      if query[:key].present? && query[:key] != "all"
         rel = rel.joins(:notes).merge(Note.where(key: query[:key])).distinct
       end
-      if query[:scale] != "all"
+      if query[:scale].present? && query[:scale] != "all"
         rel = rel.joins(:notes).merge(Note.where(scale: query[:scale])).distinct
       end
-      if query[:rhythm] != "all"
+      if query[:rhythm].present? && query[:rhythm] != "all"
         rel = rel.where(rhythm: query[:rhythm])
       end
       if query[:user_name].present?
-        s_user = User.where("name LIKE ?", "%#{query[:user_name]}%").pluck
+        u_word = query[:user_name].split(/[[:blank:]]+/)
+        u_word.each { |word|
+        s_user = User.where("REPLACE(REPLACE(name,' ',''),' ', '') LIKE ?", "%#{word}%")
         rel = rel.joins(:notes).merge(Note.where(user_id: s_user))
+        }
+        rel = rel.distinct
       end
     rel
     end

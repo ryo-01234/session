@@ -1,8 +1,9 @@
-<h1>セッション</h1>
-<!--<p>日本各地のアイリッシュ・セッションの定番を共有して、セッションをもっと楽しむためのサイト</p>-->
+<p>日本各地のアイリッシュ・セッションの定番を共有して、セッションをもっと楽しむためのサイト</p>
 <%= link_to "about", :about %>
 <%= render "shared/search_form" %>
+<% if current_user%>
 <%= link_to "楽曲登録", new_tune_path %>
+<% end %>
 <h2>Recent Update</h2>
 <dl>
   <% @recents.each do |recent| %>
@@ -11,7 +12,8 @@
     </dt>
     <dd>
       <%= recent.tune.rhythm %>
-      by <%= recent.user.name %>
+      by <%= link_to recent.user.name, tunes_path(user_name: recent.user.name) %>
+      <%= link_to "info", info_user_path(recent.user.id) %>
     </dd>
   <% end %>
 </dl>

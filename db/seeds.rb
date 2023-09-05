@@ -12,8 +12,9 @@ Tune.create(name: "Fisher's", rhythm: "Hornpipe")
 Tune.create(name: "Tam Lin", rhythm: "Reel")
 Tune.create(name: "A Fig For A Kiss", rhythm: "Slip Jig")
 
-User.create(name: "関西アイリッシュセッション", pref: "大阪", date: "第3土曜日　21時〜", user_id: "ksis", password: "kansaiyd", password_confirmation: "kansaiyd")
-User.create(name: "関東アイルランド音楽セッション会", pref: "東京", date: "毎週水曜日の夜(時間不定)", user_id: "eims", password: "kantou23", password_confirmation: "kantou23")
+User.create(name: "関西アイリッシュセッション", pref: "大阪", date: "第3土曜日　21時〜", login_id: "ksis", password: "kansaiyd", password_confirmation: "kansaiyd")
+User.create(name: "関東アイルランド音楽セッション会", pref: "東京", date: "毎週水曜日の夜(時間不定)", login_id: "eims", password: "kantou23", password_confirmation: "kantou23")
+User.create(name: "ゲスト", pref:"未定", date: "不定期", login_id: "guest", password: "guest", password_confirmation: "guest")
 
 Note.create(tune_id: 1, user_id: 1, status:"public", key: "G", scale: "major", abc:"T: The Kesh\nR: jig\nM: 6/8\nL: 1/8\nK: Gmaj\n|:G3 GAB|A3 ABd|edd gdd|edB dBA|\nGAG GAB|ABA ABd|edd gdd|BAF G3:|\n|:B2B d2d|ege dBA|B2B dBG|ABA AGA|\nBAB d^cd|ege dBd|gfg aga|bgg g3:| ")
 Note.create(tune_id: 2, user_id: 2, status:"public", key: "D", scale: "major", abc:"T: John Ryan's\nR: polka\nM: 2/4\nL: 1/8\nK: Dmaj\n|:dd B/c/d/B/|AF AF|dd B/c/d/B/|AF ED|\ndd B/c/d/B/|AF Ad/e/|fd ec|1 df d2:|2 df dd/e/||\n|:fd de/f/|g>f ed/e/|fd Ad|fd/f/ a>g|\nfd- de/f/|g/a/g/f ed/e/|fd ed/c/|1 d2 d>e:|2 d2 d2|| ")
