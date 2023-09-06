@@ -1,6 +1,9 @@
 class Tune < ApplicationRecord
   has_many :notes
 
+  validates :name, presence: true
+  validates :rhythm, presence: true
+
   class << self
     def search(query)
       rel = Tune.order("name")

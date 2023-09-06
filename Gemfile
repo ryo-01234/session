@@ -31,13 +31,17 @@ gem "jsbundling-rails"
 
 gem "cssbundling-rails"
 
+gem 'rails-i18n'
+
+gem "kaminari"
+
 #gem 'requirejs-rails'
 
 #gem 'erubis'
 
 #gem 'jquery-rails'
 
-gem 'abcjs-rails'
+#gem 'abcjs-rails'
 
 #gem 'raphael-rails'
 

@@ -30,6 +30,6 @@
   <% end %>
 <% end %>
 <% if current_user %>
-<%=link_to "ABC譜の登録", new_note_path(tune_id: @tune.id, tune_name: @tune.name, user_id: current_user.id) %>
+<%=link_to "ABC譜の登録", new_note_path(tune_id: @tune.id) %>
 <% end %>
 <%= render "shared/search_form" %>

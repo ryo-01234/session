@@ -9,3 +9,6 @@ yarn-debug.log*
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+/app/javascript/abcjs
+tmp

@@ -1,8 +1,20 @@
 class User < ApplicationRecord
-  has_secure_password
+  has_secure_password validations: false
   has_many :notes
 
+validates :login_id, presence: true,
+  format: { with: /\A[A-Za-z0-9]*\z/, allow_blank: true },
+  uniqueness: { case_sensitive: false }
 
+#  validates :password, presence: true,
+#  format: { with: /\A[A-Za-z0-9]*\z/, allow_blank: true },
+#  length: {minimum: 4}
+
+  validates :name, presence: true,
+  uniqueness: { case_sensitive: false }
+
+  validates :pref, presence: true
+  validates :date, presence: true
 
 
 

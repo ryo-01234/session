@@ -4,5 +4,5 @@ pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
-pin "abcjs-rails", to: "abcjs-rails.js", preload: true
+pin "abcjs", to: "abcjs/dist/abcjs-basic.js", preload: true
 pin "popup"

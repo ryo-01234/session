@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    models:
+      memo: 備考
+    attributes:
+      tune:
+        name: 曲名
+        alt_name: 別名
+        rhythm: リズム
+      note:
+        key: キー
+        scale: スケール
+        status: 状態
+      user:
+        name: グループ名
+        pref: 開催場所
+        date: 開催日
+        login_id: ログインID
+        password: パスワード
+  views:
+    users:
+      name: グループ名
+      pref: 開催場所
+      date: 開催日
+      login_id: ログインID
+      password: パスワード
+      memo: 備考
+    shared:
+      _search_form:
+        tune_name: 曲名
+        key: キー
+        scale: スケール
+        user_name: 登録者

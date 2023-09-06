@@ -1,9 +1,11 @@
+<%= render "shared/errors", obj: @note %>
+<% statuses = ["public", "draft"] %>
 <dl>
     <dt>
       <%= f.label :status %>
     </dt>
     <dd>
-      <%= f.select :status, @status %>
+      <%= f.select :status, statuses %>
     </dd>
     <dt>
       <%= f.label :key %>
@@ -31,5 +33,5 @@
     </dd>
   </dl>
   <%= hidden_field_tag :ref, @ref %>
-  <%= hidden_field_tag :user_id, @user_id %>
-  <%= hidden_field_tag :tune_id, @tune_id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :tune_id, value: @tune_id %>
