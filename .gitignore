@@ -11,4 +11,5 @@ yarn-debug.log*
 !/app/assets/builds/.keep
 
 /app/javascript/abcjs
-tmp
+/tmp
+/log

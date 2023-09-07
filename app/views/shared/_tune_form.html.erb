@@ -1,3 +1,4 @@
+<% rhythms = ["Reel", "Jig",  "Polka", "Slip Jig", "Hornpipe", "O'Carolan's", "Waltz", "Air" ]%>
 <%= render "shared/errors", obj: @tune %>
 <dl>
     <dt>
@@ -6,12 +7,15 @@
     <dd>
       <%= f.text_field :name %>
     </dd>
+    <% if @tune.new_record? %>
     <dt>
       <%= f.label :rhythm %>
+      ※後から変更はできません
     </dt>
     <dd>
-      <%= f.text_field :rhythm %>
+      <%= f.select :rhythm, rhythms %>
     </dd>
+    <% end %>
     <dt>
       <%= f.label :memo %>
       任意項目。なんでもOK

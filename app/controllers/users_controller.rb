@@ -18,8 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @note = Note.where(user_id: params[:id])
+    @user = current_user
+    @note = Note.where(user_id: current_user)
   end
 
   def new
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(login_id: session[:login_id])
+    @user = current_user
   end
 
   def create
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     @user.assign_attributes(user_params)
     if @user.save
       redirect_to @user, notice: "会員情報を更新しました"

@@ -55,6 +55,4 @@ class TunesController < ApplicationController
     redirect_to :root, status: :see_other, alert: "楽曲情報を削除しました"
   end
 
-  private
-
 end

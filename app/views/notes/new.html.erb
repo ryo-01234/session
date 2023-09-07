@@ -1,4 +1,4 @@
-<h1><%= @tune.name %>のABC譜の登録</h1>
+<h1><%= $tune.name %>のABC譜の登録</h1>
 <%= form_with model: @note do |f| %>
 <%= render "shared/note_form", f: f %>
   <%= f.submit "登録" %>

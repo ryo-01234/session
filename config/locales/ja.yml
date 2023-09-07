@@ -17,14 +17,20 @@ ja:
         date: 開催日
         login_id: ログインID
         password: パスワード
+        current_password: 現在のパスワード
+        password_confirmation: 新しいパスワード(確認)
+    errors:
+      messages:
+        wrong: が正しくありません
   views:
     users:
-      name: グループ名
-      pref: 開催場所
-      date: 開催日
-      login_id: ログインID
-      password: パスワード
-      memo: 備考
+      show:
+        name: グループ名
+        pref: 開催場所
+        date: 開催日
+        login_id: ログインID
+        password: パスワード
+        memo: 備考
     shared:
       _search_form:
         tune_name: 曲名

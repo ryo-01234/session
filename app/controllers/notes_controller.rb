@@ -1,7 +1,4 @@
 class NotesController < ApplicationController
-
-
-
   private def note_params
     attrs = [
       :tune_id,
@@ -23,14 +20,13 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
-    @tune = Tune.find(params[:tune_id])
-    @tune_id = @tune.id
+    $current_tune = Tune.find(params[:tune_id])
   end
 
   def edit
     @note = Note.find(params[:id])
-    @ref = params[:ref]
-    @tune_id = @note.tune.id
+    $ref = params[:ref]
+    $current_tune = Tune.find(@note.tune.id)
   end
 
   def create
@@ -47,7 +43,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.assign_attributes(note_params)
     if @note.save
-      if @ref.present?
+      if @ref == "user"
         redirect_to user_path(params[:note][:user_id]), notice: "#{@note.tune.name}のABC譜を更新しました"
       else
         redirect_to tune_path(@note.tune.id), notice: "ABC譜を更新しました"

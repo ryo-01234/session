@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    forget(view_context.current_user)
+    forget(current_user)
     session.delete(:login_id)
     redirect_to :root, status: :see_other, alert: "ログアウトしました"
   end
