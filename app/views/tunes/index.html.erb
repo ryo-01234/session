@@ -1,11 +1,11 @@
-<h1>Result</h1>
+<h4>Result</h4>
 <% if @tunes.present? %>
   <dl class="search_result">
     <% @tunes.each do |tune| %>
-    <dt><%= link_to tune.name, tune %></dt>
-    <dd>
-      Rhythm:<%= tune.rhythm %><br />
-    </dd>
+      <dt><%= link_to tune.name, tune, class: "big" %></dt>
+      <dd>
+        Rhythm:<%= tune.rhythm %><br />
+      </dd>
     <% end %>
   </dl>
 <% else %>

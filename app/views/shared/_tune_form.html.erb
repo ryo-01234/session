@@ -1,13 +1,19 @@
 <% rhythms = ["Reel", "Jig",  "Polka", "Slip Jig", "Hornpipe", "O'Carolan's", "Waltz", "Air" ]%>
 <%= render "shared/errors", obj: @tune %>
 <dl>
-    <dt>
-      <%= f.label :name %>
-    </dt>
-    <dd>
-      <%= f.text_field :name %>
-    </dd>
-    <% if @tune.new_record? %>
+  <dt>
+    <%= f.label :name %>
+  </dt>
+  <dd>
+    <%= f.text_field :name %>
+  </dd>
+  <dt>
+    <%= f.label :alt_name %>
+  </dt>
+  <dd>
+    <%= f.text_field :alt_name %>
+  </dd>
+  <% if @tune.new_record? %>
     <dt>
       <%= f.label :rhythm %>
       ※後から変更はできません
@@ -15,12 +21,12 @@
     <dd>
       <%= f.select :rhythm, rhythms %>
     </dd>
-    <% end %>
-    <dt>
-      <%= f.label :memo %>
-      任意項目。なんでもOK
-    </dt>
-    <dd>
-      <%= f.text_area :memo %>
-    </dd>
-  </dl>
+  <% end %>
+  <dt>
+    <%= f.label :memo %>
+    任意項目。なんでもOK
+  </dt>
+  <dd>
+    <%= f.text_area :memo %>
+  </dd>
+</dl>

@@ -19,6 +19,7 @@ class TunesController < ApplicationController
 
   def show
     @tune = Tune.find(params[:id])
+    @tune_alt_name = eval("[#{@tune.alt_name}]")
     @note = @tune.notes.where(status: "public")
   end
 

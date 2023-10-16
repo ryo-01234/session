@@ -4,54 +4,54 @@
   </p>
 <% end %>
 <dl>
-    <dt>
-      <%= :login_id %>
-    </dt>
-    <dd>
-      <%= @user.login_id %>
-    </dd>
-    <dt>
-      <%= :password %>
-    </dt>
-    <dd>
-      ※パスワードは非表示としています
-    </dd>
-    <dt>
-      <%= :name %>
-    </dt>
-    <dd>
-      <%= @user.name %>
-    </dd>
-    <dt>
-      <%= :pref %>
-    </dt>
-    <dd>
-      <%= @user.pref %>
-    </dd>
-    <dt>
-      <%= :date %>
-    </dt>
-    <dd>
-      <%= @user.date %>
-    </dd>
-    <dt>
-      <%= :memo %>
-    </dt>
-    <dd>
-      <%= @user.memo %>
-    </dd>
-  </dl>
+  <dt>
+    <%= :login_id %>
+  </dt>
+  <dd>
+    <%= @user.login_id %>
+  </dd>
+  <dt>
+    <%= :password %>
+  </dt>
+  <dd>
+    ※パスワードは非表示としています
+  </dd>
+  <dt>
+    <%= :name %>
+  </dt>
+  <dd>
+    <%= @user.name %>
+  </dd>
+  <dt>
+    <%= :pref %>
+  </dt>
+  <dd>
+    <%= @user.pref %>
+  </dd>
+  <dt>
+    <%= :date %>
+  </dt>
+  <dd>
+    <%= @user.date %>
+  </dd>
+  <dt>
+    <%= :memo %>
+  </dt>
+  <dd>
+    <%= @user.memo %>
+  </dd>
+</dl>
 
-  <h2><%= @user.name %>が作成したABC譜</h2>
+<h2><%= @user.name %>が作成したABC譜</h2>
 <% @note.each_with_index do |note, idx| %>
-<div>
-<%= idx + 1 -%>
-<%= link_to note.tune.name, tune_path(note.tune.id) %>
-<%= note.tune.rhythm %>
-<%= note.key %>
-<%= note.scale %>
-<%= note.status %>
-<%= link_to "編集", edit_note_path(id: note.id, ref: "user") %>
-<%= link_to "削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。削除してよろしいですか?"} %>
-</div>
+  <div>
+    <%= idx + 1 -%>
+    <%= link_to note.tune.name, tune_path(note.tune.id) %>
+    <%= note.tune.rhythm %>
+    <%= note.key %>
+    <%= note.scale %>
+    <%= note.status %>
+    <%= link_to "編集", edit_note_path(id: note.id, ref: "user") %>
+    <%= link_to "削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。削除してよろしいですか?"} %>
+  </div>
 <% end %>

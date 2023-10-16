@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Session</title>
+    <title>Session.jp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,9 +10,32 @@
   </head>
 
   <body>
-    <%= render "shared/header" %>
+    <header>
+      <div id="logo">
+        <h1><%= link_to "Session.JP", root_path%></h1>
+      </div>
+      <div id="menu">
+        <% unless current_page?( new_user_path || edit_user_path ) %>
+          <% if current_user %>
+            <%= render "shared/logging"%>
+          <% else %>
+            <%= render "shared/login_form" %>
+          <% end %>
+        <% end %>
+      </div>
+    </header>
+    <div class="clear"></div>
+    <main>
     <%= yield %>
-    <%= render "shared/footer" %>
-    <p>&copy;2023</p>
+    </main>
+    <footer>
+      <% unless current_page?(root_path) %>
+        <div id="f_menu">
+          <%= link_to "戻る", 'javascript:history.back()' %>
+          <%= link_to "Top", root_path %>
+        </div>
+      <% end %>
+      <p>&copy;2023</p>
+    </>
   </body>
 </html>

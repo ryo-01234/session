@@ -1,8 +1,0 @@
-<h1><%= link_to "Session.JP", root_path%></h1>
-<% unless current_page?( new_user_path || edit_user_path ) %>
-  <% if current_user %>
-    <%= render "shared/logging"%>
-  <% else %>
-    <%= render "shared/login_form" %>
-  <% end %>
-<% end %>

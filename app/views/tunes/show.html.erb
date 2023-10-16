@@ -4,32 +4,47 @@
   </p>
 <% end %>
 
-<h1><%= @tune.name %></h1>
-<h2><%= @tune.rhythm %></h2>
-<p><%= @tune.memo if @tune.memo.present? %></p>
+<h2><%= @tune.name %></h2>
+<% if @tune_alt_name.present? %>
+  <p><%= @tune_alt_name.join(", ") %></p>
+<% end %>
+<h3><%= @tune.rhythm %></h3>
+<% if @tune.memo.present? %>
+  <p><%= @tune.memo %></p>
+<% end %>
 <%if current_user%>
-<%= link_to "楽曲情報の編集", edit_tune_path %>
+  <%= link_to "楽曲情報の編集", edit_tune_path %>
 <% end %>
 <script>let abc;</script>
-<% @note.each_with_index do |note,idx| %>
-  <h3><%= idx + 1 %></h3>
-  <p>作成者:<%= link_to note.user.name, info_user_path(note.user.id) %></p>
-  <div class="abc">
-    <%= h(note.abc).gsub("\n", "<br />").html_safe %>
-  </div>
-  <%= note.memo if note.memo.present? %>
-  <div id="paper" class="score">
-    <script>
-        abc = `<%= note.abc.gsub("\n","\\n") %>`;
-        ABCJS.renderAbc("paper", abc);
-    </script>
-  </div>
-  <% if note.user.id == current_user&.id %>
-  <%=link_to "ABC譜の編集", edit_note_path(ref: "tune") %>
-  <%=link_to "ABC譜の削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。\n削除してよろしいですか?" }%>
+<div class="note_show">
+<% if @note.present? %>
+  <% @note.each_with_index do |note,idx| %>
+    <h3><%= idx + 1 %></h3>
+    <p>作成者:<%= link_to note.user.name, info_user_path(note.user.id) %></p>
+    <div class="abc">
+      <%= h(note.abc).gsub("\n", "<br />").html_safe %>
+    </div>
+    <% if note.memo.present? %>
+      <p><%= note.memo %></p>
+    <% end %>
+      <div id="paper" class="score">
+        <script>
+            abc = `<%= note.abc.gsub("\n","\\n") %>`;
+            ABCJS.renderAbc("paper", abc);
+        </script>
+      </div>
+    <% if note.user.id == current_user&.id %>
+      <%=link_to "ABC譜の編集", edit_note_path(ref: "tune") %>
+      <%=link_to "ABC譜の削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。\n削除してよろしいですか?" }%>
+    <% end %>
   <% end %>
+<% else %>
+  <h3>ABC Note Not Found</h3>
+  <p>ABC譜を登録してください</p>
 <% end %>
-<% if current_user %>
-<%=link_to "ABC譜の登録", new_note_path(tune_id: @tune.id) %>
-<% end %>
+</div>
+  <% if current_user %>
+    <%=link_to "ABC譜の登録", new_note_path(tune_id: @tune.id) %>
+  <% end %>
+
 <%= render "shared/search_form" %>

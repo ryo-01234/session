@@ -1,0 +1,218 @@
+body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  padding-bottom: 3em;
+  margin: 0;
+  /* margin-top: 5em; headerでposition: fixed;の場合*/
+  background-color: #fff;
+  position: relative;
+  min-height: 100vh;
+}
+
+
+
+header{
+  height: 5em;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #FCD07E;
+/*
+  position : fixed;
+  top: 0;
+  left: 0;
+*/
+}
+
+
+#logo{
+  height: 5em;
+  padding:0;
+  margin:0;
+  float: left;
+}
+#menu{
+  height: 5em;
+  padding: 0;
+  padding-top: 0.5em;
+  padding-right: 2em;
+  margin: 0;
+  float: right;
+  font-size: 0.75em;
+}
+/* サイトタイトル */
+h1{
+  padding:0;
+  margin:0;
+  margin-left: 0.5em;
+  font-family: serif;
+  font-size: 3em;
+}
+h1 a:link{
+  color: #00561F;
+}
+h1 a:visited{
+  color: #00561F;
+}
+h1 a:active{
+  color: #00561F;
+}
+/* header「log in」に使用 */
+h6{
+  padding: 0;
+  margin: 0;
+  margin-right: 2em;
+  font-size: 1em;
+  display: inline;
+}
+.alert{
+  padding: 0;
+  margin: 0;
+  color: red;
+  font-weight: bold;
+}
+
+
+
+
+main{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 6em;
+}
+
+/*　tune#showの曲名　*/
+h2{
+  font-size: 2.5em;
+  font-family: serif;
+}
+/* tune#showのリズム名 */
+h3{
+  font-size: 2em;
+}
+/* 汎用的な見出し(大) */
+h4{
+  padding: 0em;
+  margin: 1em 0;
+  font-size: 2em;
+  font-family: serif;
+  border-bottom: 5px double #00561F;
+}
+/* 汎用的な見出し(小) */
+h5{
+  padding: 0.5em;
+  margin: 2em 0;
+  border-bottom: #00561F solid 3px;
+  font-size: 1em;
+}
+
+#search_form{
+  display: inline-block;
+  margin-left: 2em;
+  padding: 1em;
+  line-height: 2em;
+  border: 3px double #39A869;
+}
+.search_result dt, dd{
+  margin-bottom: 0.5em
+}
+
+
+.note_show{
+  margin-bottom: 5em;
+}
+
+
+
+footer{
+  height: 6em;
+  width: 100%;
+  padding-top: 1em;
+  padding-left: 2em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  background-color: #FCD07E;
+}
+#f_menu{
+  font-size: 1.2em;
+}
+
+
+#i_menu ul{
+  height: 3em;
+}
+#i_menu li{
+  width:20%;
+  height: 3em;
+  padding: auto;
+  text-align: center;
+  line-height: 3em;
+  float: left;
+  border: 1px solid #00561F;
+  border-right: none;
+  list-style-type: none;
+}
+#i_menu li:last-child{
+  border-right: 1px solid #00561F;
+}
+#i_menu a{
+  display: block;
+  transition: all 0.17s ease;
+}
+#i_menu a:hover{
+  background-color: #FCD07E;
+  color: #fff;
+}
+
+
+/*index　アカウント情報表示用*/
+
+.group{
+  width: 50%;
+  margin: 2em;
+  margin-top: 0;
+}
+.group thead{
+  height: 3em;
+}
+.group tbody td{
+  padding: 0.25em;
+  border-bottom: 2px solid #007d7a;
+}
+
+
+
+
+/* 汎用 */
+
+.strong{
+  color: red;
+  font-weight: bold;
+}
+.small{
+  font-size: smaller;
+}
+.big{
+  font-size: larger;
+  font-family: serif;
+}
+
+
+/* リンクの色設定 */
+
+a:link{
+  color: #00561F;
+}
+a:visited{
+  color: #007d7a;
+}
+a:active{
+  color: #39A869;
+}
+
+.clear{
+  clear: both;
+}

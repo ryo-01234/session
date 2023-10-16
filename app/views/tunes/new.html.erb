@@ -1,5 +1,5 @@
-<h1>楽曲登録</h1>
+<h2>楽曲登録</h2>
 <%= form_with model: @tune do |f| %>
-<%= render "shared/tune_form", f: f %>
+  <%= render "shared/tune_form", f: f %>
   <%= f.submit "登録" %>
 <% end %>

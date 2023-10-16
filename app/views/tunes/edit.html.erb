@@ -1,5 +1,5 @@
-<h1><%= @tune.name %>の編集</h1>
+<h2><%= @tune.name %>の編集</h2>
 <%= form_with model: @tune do |f| %>
-<%= render "shared/tune_form", f: f %>
+  <%= render "shared/tune_form", f: f %>
   <%= f.submit "登録" %>
 <% end %>
