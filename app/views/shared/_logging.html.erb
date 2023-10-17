@@ -3,8 +3,9 @@
     <%= flash.alert %>
   </p>
 <% end %>
-<ul class="account-menu">
-  <li>Logging in <span id="user_popup"><%= current_user.name %></li>
+<ul id="account-menu">
+  <li>Logging in <%= link_to current_user.name, "", id: "user_popup" %></li>
+  <li>Logging in <a href="javascript: void(0)" id="user_popup"><%= current_user.name %></a>
   <li><%= button_to "ログアウト", :session, method: :delete %></li>
 </ul>
 

@@ -12,39 +12,46 @@
 <% if @tune.memo.present? %>
   <p><%= @tune.memo %></p>
 <% end %>
+
 <%if current_user%>
-  <%= link_to "楽曲情報の編集", edit_tune_path %>
+  <%= link_to "楽曲情報の編集", edit_tune_path, class: "button" %>
 <% end %>
+
 <script>let abc;</script>
-<div class="note_show">
-<% if @note.present? %>
-  <% @note.each_with_index do |note,idx| %>
-    <h3><%= idx + 1 %></h3>
-    <p>作成者:<%= link_to note.user.name, info_user_path(note.user.id) %></p>
-    <div class="abc">
-      <%= h(note.abc).gsub("\n", "<br />").html_safe %>
-    </div>
-    <% if note.memo.present? %>
-      <p><%= note.memo %></p>
-    <% end %>
-      <div id="paper" class="score">
-        <script>
-            abc = `<%= note.abc.gsub("\n","\\n") %>`;
-            ABCJS.renderAbc("paper", abc);
-        </script>
+<div class="notes">
+  <% if @note.present? %>
+    <% @note.each_with_index do |note,idx| %>
+      <div class="note">
+        <h3><%= idx + 1 %></h3>
+        <p>
+          作成者:<%= link_to note.user.name, tunes_path(user_name: note.user.name) %>
+          <%= link_to "info", info_user_path(note.user.id), class: "small" %>
+        </p>
+        <div class="abc">
+          <%= h(note.abc).gsub("\n", "<br />").html_safe %>
+        </div>
+        <% if note.memo.present? %>
+          <p><%= note.memo %></p>
+        <% end %>
+          <div id="paper" class="score">
+            <script>
+                abc = `<%= note.abc.gsub("\n","\\n") %>`;
+                ABCJS.renderAbc("paper", abc);
+            </script>
+          </div>
+        <% if note.user.id == current_user&.id %>
+          <%=link_to "ABC譜の編集", edit_note_path(ref: "tune"), class: "button" %>
+          <%=link_to "ABC譜の削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。\n削除してよろしいですか?" }, class: "button" %>
+        <% end %>
       </div>
-    <% if note.user.id == current_user&.id %>
-      <%=link_to "ABC譜の編集", edit_note_path(ref: "tune") %>
-      <%=link_to "ABC譜の削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。\n削除してよろしいですか?" }%>
     <% end %>
+  <% else %>
+    <h3>ABC Note Not Found</h3>
+    <p>ABC譜を登録してください</p>
   <% end %>
-<% else %>
-  <h3>ABC Note Not Found</h3>
-  <p>ABC譜を登録してください</p>
-<% end %>
 </div>
   <% if current_user %>
-    <%=link_to "ABC譜の登録", new_note_path(tune_id: @tune.id) %>
+    <%=link_to "ABC譜の登録", new_note_path(tune_id: @tune.id), class: "button" %>
   <% end %>
 
 <%= render "shared/search_form" %>

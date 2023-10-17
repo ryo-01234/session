@@ -15,7 +15,7 @@
 
 
 <h5>登録されているセッション・グループのログイン情報</h5>
-<table class="group">
+<table class="table">
   <thead>
     <tr>
       <td>グループ名</td>
@@ -57,7 +57,7 @@
 <%= render "shared/search_form" %>
 
 <% if current_user %>
-  <%= link_to "楽曲登録", new_tune_path %>
+  <%= link_to "楽曲登録", new_tune_path, class: "button" %>
 <% end %>
 
 
@@ -65,12 +65,16 @@
 <dl>
   <% @recents.each do |recent| %>
     <dt>
-      <%= link_to recent.tune.name, tune_path(recent.tune) %>
+      <%= link_to recent.tune.name, tune_path(recent.tune), class: "big" %>
     </dt>
     <dd>
       <%= recent.tune.rhythm %>&emsp;
       by&nbsp;<%= link_to recent.user.name, tunes_path(user_name: recent.user.name) %>
-      <%= link_to "info", info_user_path(recent.user.id), class: "small" %>
+      <% if recent.user.id == current_user.id %>
+        <%= link_to "info", user_path(current_user), class: "small" %>
+      <% else %>
+        <%= link_to "info", info_user_path(recent.user.id), class: "small" %>
+      <% end %>
     </dd>
   <% end %>
 </dl>
