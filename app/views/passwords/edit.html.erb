@@ -1,4 +1,5 @@
 <h2>パスワードの変更</h2>
+<div class="form">
 <%= form_for @user, as: "password", url: :password do |f| %>
   <%= render "shared/errors", obj: @user %>
   <dl>

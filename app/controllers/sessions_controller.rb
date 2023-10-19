@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:login_id] = user.login_id
       params[:remember_me] == "on" ? remember(user) : forget(user)
-      flash.alert = "ログインしました"
     else
       flash.alert = "IDかパスワードが正しくありません"
     end

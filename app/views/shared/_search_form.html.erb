@@ -1,14 +1,14 @@
 <div id="search_form">
 <%= form_with url: tunes_path, method: :get do |f| %>
-  <%= f.label :tune_name %>
+  <%= f.label t("tune_name") %>
   <%= f.text_field :tune_name %><br />
-  <%= f.label :key %>
+  <%= f.label t("key") %>
   <%= f.select :key, $key_selector %>
-  <%= f.label :scale %>
+  <%= f.label t("scale") %>
   <%= f.select :scale, $scale_selector %><br />
-  <%= f.label :rhythm %>
+  <%= f.label t("rhythm") %>
   <%= f.select :rhythm, $rhythm_selector %><br />
-  <%= f.label :user_name %>
+  <%= f.label t("user_name") %>
   <%= f.text_field :user_name %><br />
   <%= submit_tag "検索" %>
 <% end %>

@@ -1,39 +1,27 @@
 ja:
   activerecord:
     models:
-      memo: 備考
     attributes:
       tune:
         name: 曲名
         alt_name: 別名
         rhythm: リズム
+        memo: 備考
       note:
         key: キー
         scale: スケール
         status: 状態
+        abc: ABC譜
+        memo: 備考
       user:
         name: グループ名
         pref: 開催場所
         date: 開催日
         login_id: ログインID
+        memo: 備考
         password: パスワード
         current_password: 現在のパスワード
         password_confirmation: 新しいパスワード(確認)
     errors:
       messages:
         wrong: が正しくありません
-  views:
-    users:
-      show:
-        name: グループ名
-        pref: 開催場所
-        date: 開催日
-        login_id: ログインID
-        password: パスワード
-        memo: 備考
-    shared:
-      _search_form:
-        tune_name: 曲名
-        key: キー
-        scale: スケール
-        user_name: 登録者

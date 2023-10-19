@@ -7,37 +7,37 @@
 <div class="user_info">
   <dl>
     <dt>
-      <%= :login_id %>
+      <%=  t("login_id") %>
     </dt>
     <dd>
       <%= @user.login_id %>
     </dd>
     <dt>
-      <%= :password %>
+      <%= t("password") %>
     </dt>
     <dd>
       ※パスワードは非表示としています
     </dd>
     <dt>
-      <%= :name %>
+      <%= t("name") %>
     </dt>
     <dd>
       <%= @user.name %>
     </dd>
     <dt>
-      <%= :pref %>
+      <%= t("pref") %>
     </dt>
     <dd>
       <%= @user.pref %>
     </dd>
     <dt>
-      <%= :date %>
+      <%= t("date") %>
     </dt>
     <dd>
       <%= @user.date %>
     </dd>
     <dt>
-      <%= :memo %>
+      <%= t("memo") %>
     </dt>
     <dd>
       <%= @user.memo.present? ? @user.memo : "※Empty!" %>

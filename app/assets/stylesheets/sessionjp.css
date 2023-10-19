@@ -45,6 +45,9 @@ header{
   margin: 0;
   padding: 0;
 }
+#account-menu li{
+  list-style: none;
+}
 /* サイトタイトル */
 h1{
   padding:0;
@@ -79,7 +82,7 @@ h6{
 
 /* ログイン中ヘッダー用 */
 #user_popup_menu{
-  display: block;
+  display: none;
   position: relative;
   z-index: 10;
   padding: 0.5em;
@@ -104,6 +107,9 @@ main{
 
 /*　tune#showの曲名　*/
 h2{
+  padding-left: 0.25em;
+  border-left: 12px solid #007d7a;
+  border-bottom: 10px double #007d7a;
   font-size: 2.5em;
   font-family: serif;
 }
@@ -199,6 +205,14 @@ footer{
 #i_menu a:hover{
   background-color: #FCD07E;
   color: #fff;
+}
+
+/* フォーム */
+.form{
+  margin-left: 2em;
+}
+.form dt{
+  margin-top: 2em;
 }
 
 

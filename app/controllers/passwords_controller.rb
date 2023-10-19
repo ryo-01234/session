@@ -29,7 +29,7 @@ class PasswordsController < ApplicationController
         if @user.save
           redirect_to user_path(current_user), notice: "パスワードを更新しました"
         else
-          render "edit"
+          render "edit", status: :unprocessable_entity
         end
       else
         @user.errors.add(:current_password, :wrong)

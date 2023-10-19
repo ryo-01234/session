@@ -1,5 +1,8 @@
 <h2><%= @tune.name %>の編集</h2>
-<%= form_with model: @tune do |f| %>
-  <%= render "shared/tune_form", f: f %>
-  <%= f.submit "登録" %>
-<% end %>
+<p class="red strong">「<%= t("memo") %>」と「<%= t("alt_name") %>」以外は必須項目です。</p>
+<div class="form">
+  <%= form_with model: @tune do |f| %>
+    <%= render "shared/tune_form", f: f %>
+    <%= f.submit "登録" %>
+  <% end %>
+</div>

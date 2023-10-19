@@ -1,11 +1,6 @@
-<% if flash.alert %>
-  <p class="alert">
-    <%= flash.alert %>
-  </p>
-<% end %>
 <ul id="account-menu">
-  <li>Logging in <%= link_to current_user.name, "", id: "user_popup" %></li>
-  <li>Logging in <a href="javascript: void(0)" id="user_popup"><%= current_user.name %></a>
+  <li>Logging in <%= current_user.name %></li>
+  <li><a href="#" id="user_popup">ユーザーメニュー</a></li>
   <li><%= button_to "ログアウト", :session, method: :delete %></li>
 </ul>
 
@@ -17,3 +12,18 @@
     <li><%= link_to "ログアウト", session_path, data: { turbo_method: "delete", turbo_confirm: "ログアウトしますか?" } %></li>
   </ul>
 </nav>
+<script>
+let text = document.getElementById("user_popup");
+let menu = document.getElementById("user_popup_menu");
+
+let mOpen = function(){
+  menu.style.display = "block";
+}
+let mClose = function(){
+  menu.style.display = "none";
+}
+
+menu.addEventListener('mouseleave', mClose);
+text.addEventListener('click', mOpen);
+
+</script>

@@ -70,7 +70,7 @@
     <dd>
       <%= recent.tune.rhythm %>&emsp;
       by&nbsp;<%= link_to recent.user.name, tunes_path(user_name: recent.user.name) %>
-      <% if recent.user.id == current_user.id %>
+      <% if recent.user == current_user %>
         <%= link_to "info", user_path(current_user), class: "small" %>
       <% else %>
         <%= link_to "info", info_user_path(recent.user.id), class: "small" %>
