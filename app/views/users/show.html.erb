@@ -1,0 +1,75 @@
+<h2><%= @user.name %></h2>
+<% if flash.notice %>
+  <p class="notice">
+    <%= flash.notice %>
+  </p>
+<% end %>
+<div class="user_info">
+  <dl>
+    <dt>
+      <%=  t("login_id") %>
+    </dt>
+    <dd>
+      <%= @user.login_id %>
+    </dd>
+    <dt>
+      <%= t("password") %>
+    </dt>
+    <dd>
+      ※パスワードは非表示としています
+    </dd>
+    <dt>
+      <%= t("name") %>
+    </dt>
+    <dd>
+      <%= @user.name %>
+    </dd>
+    <dt>
+      <%= t("pref") %>
+    </dt>
+    <dd>
+      <%= @user.pref %>
+    </dd>
+    <dt>
+      <%= t("date") %>
+    </dt>
+    <dd>
+      <%= @user.date %>
+    </dd>
+    <dt>
+      <%= t("memo") %>
+    </dt>
+    <dd>
+      <%= @user.memo.present? ? @user.memo : "※Empty!" %>
+    </dd>
+  </dl>
+</div>
+<h4><%= @user.name %>が作成したABC譜</h4>
+<% if @note.present? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <td></td>
+        <td>Title</td>
+        <td>Rhythm</td>
+        <td>Key, Scale</td>
+        <td>Status</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @note.each_with_index do |note, idx| %>
+        <tr>
+          <td><%= idx + 1 -%></td>
+          <td><%= link_to note.tune.name, tune_path(note.tune.id), class: "big" %></td>
+          <td><%= note.tune.rhythm %></td>
+          <td><%= note.key %>&nbsp;<%= note.scale %></td>
+          <td><%= note.status %></td>
+          <td><%= link_to "編集", edit_note_path(id: note.id, ref: "user") %></td>
+          <td><%= link_to "削除", note_path, data: {turbo_method: :delete, turbo_confirm: "削除すると復元できません。削除してよろしいですか?"} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>作成したABC譜はまだありません</p>
+<% end %>

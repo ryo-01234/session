@@ -1,0 +1,26 @@
+<h2>パスワードの変更</h2>
+<div class="form">
+<%= form_for @user, as: "password", url: :password do |f| %>
+  <%= render "shared/errors", obj: @user %>
+  <dl>
+    <dt>
+      <%= f.label :current_password %>
+    </dt>
+    <dd>
+      <%= f.password_field :current_password %>
+    </dd>
+    <dt>
+      <%= f.label :password %>
+    </dt>
+    <dd>
+      <%= f.password_field :password %>
+    </dd>
+    <dt>
+      <%= f.label :password_confirmation %>
+    </dt>
+    <dd>
+      <%= f.password_field :password_confirmation %>
+    </dd>
+  </dl>
+  <%= f.submit "更新" %>
+<% end %>

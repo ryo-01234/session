@@ -1,0 +1,47 @@
+<%= render "shared/errors", obj: @user %>
+<dl>
+  <dt>
+    <%= f.label :login_id %>
+    ログインで使用します
+  </dt>
+  <dd>
+    <%= f.text_field :login_id %>
+  </dd>
+  <% if @user.new_record? %>
+    <dt>
+      <%= f.label :password %>
+      4文字以上の半角英数字
+    </dt>
+    <dd>
+      <%= f.text_field :password %>
+    </dd>
+  <% end %>
+  <dt>
+    <%= f.label :name %>
+    検索結果などに表示されます
+  </dt>
+  <dd>
+    <%= f.text_field :name %>
+  </dd>
+  <dt>
+    <%= f.label :pref %>
+    都道府県だけでもOK。秘密主義な方は「非公開」と入力してください
+  </dt>
+  <dd>
+    <%= f.text_field :pref %>
+  </dd>
+  <dt>
+    <%= f.label :date %>
+    「非公開」とか「不定期」とかでもOK
+  </dt>
+  <dd>
+    <%= f.text_field :date %>
+  </dd>
+  <dt>
+    <%= f.label :memo %>
+    任意項目。なんでもOK
+  </dt>
+  <dd>
+    <%= f.text_area :memo %>
+  </dd>
+</dl>

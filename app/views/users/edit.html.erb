@@ -1,0 +1,9 @@
+<h2>会員情報の編集</h2>
+<p class="red strong">「<%= t("memo") %>」以外は必須項目です。</p>
+
+<div class="form">
+  <%= form_with model: @user do |f| %>
+    <%= render "shared/user_form", f: f %>
+    <%= f.submit "登録" %>
+  <% end %>
+  </div>

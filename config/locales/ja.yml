@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+    attributes:
+      tune:
+        name: 曲名
+        alt_name: 別名
+        rhythm: リズム
+        memo: 備考
+      note:
+        key: キー
+        scale: スケール
+        status: 状態
+        abc: ABC譜
+        memo: 備考
+      user:
+        name: グループ名
+        pref: 開催場所
+        date: 開催日
+        login_id: ログインID
+        memo: 備考
+        password: パスワード
+        current_password: 現在のパスワード
+        password_confirmation: 新しいパスワード(確認)
+    errors:
+      messages:
+        wrong: が正しくありません
+        empty: が入力されていません

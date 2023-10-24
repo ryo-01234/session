@@ -1,0 +1,8 @@
+<h2><%= $current_tune.name %>のABC譜の編集</h2>
+<p class="red strong">「Memo」以外は必須項目です。</p>
+<div class="form">
+  <%= form_with model: @note do |f| %>
+    <%= render "shared/note_form", f: f %>
+    <%= f.submit "登録" %>
+  <% end %>
+</div>

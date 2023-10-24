@@ -1,0 +1,39 @@
+<%= render "shared/errors", obj: @note %>
+<% statuses = ["public", "draft"] %>
+<% keys = ["C", "D♭","D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B" ] %>
+<% scales = ["major", "minor", "dorian", "mixolydian", "lydian"] %>
+<dl>
+    <dt>
+      <%= f.label :status %>
+    </dt>
+    <dd>
+      <%= f.select :status, statuses %>
+    </dd>
+    <dt>
+      <%= f.label :key %>
+    </dt>
+    <dd>
+      <%= f.select :key, keys %>
+    </dd>
+    <dt>
+      <%= f.label :scale %>
+    </dt>
+    <dd>
+      <%= f.select :scale, scales %>
+    </dd>
+    <dt>
+      <%= f.label :memo %>
+    </dt>
+    <dd>
+      <%= f.text_area :memo %>
+    </dd>
+    <dt>
+      <%= f.label :abc %>
+    </dt>
+    <dd>
+      <%= f.text_area :abc %>
+    </dd>
+  </dl>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :tune_id, value: $current_tune.id %>
+  <%= hidden_field_tag :ref, $ref %>

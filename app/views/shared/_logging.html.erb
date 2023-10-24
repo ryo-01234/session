@@ -1,0 +1,28 @@
+<ul id="account-menu">
+  <li>Logging in <%= current_user.name %></li>
+  <li><a href="#" id="user_popup">ユーザーメニュー</a></li>
+</ul>
+
+<nav id="user_popup_menu">
+  <ul>
+    <li><%= link_to "会員情報の確認", user_path(current_user) %></li>
+    <li><%= link_to "会員情報の編集", edit_user_path(current_user) %></li>
+    <li><%= link_to "パスワードの変更", edit_password_path %>
+    <li><%= link_to "ログアウト", session_path, data: { turbo_method: "delete", turbo_confirm: "ログアウトしますか?" } %></li>
+  </ul>
+</nav>
+<script>
+let text = document.getElementById("user_popup");
+let menu = document.getElementById("user_popup_menu");
+
+let mOpen = function(){
+  menu.style.display = "block";
+}
+let mClose = function(){
+  menu.style.display = "none";
+}
+
+text.addEventListener('click', mOpen);
+menu.addEventListener('mouseleave', mClose);
+
+</script>
