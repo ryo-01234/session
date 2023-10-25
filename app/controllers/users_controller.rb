@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user, notice: "会員登録が完了しました"
     else
-      render "new"
+      render "new", status: :unprocessable_entity
     end
   end
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user, notice: "会員情報を更新しました"
     else
-      render "edit"
+      render "edit", status: :unprocessable_entity
     end
   end
 

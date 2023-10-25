@@ -12,17 +12,16 @@
   </ul>
 </nav>
 <script>
-let text = document.getElementById("user_popup");
-let menu = document.getElementById("user_popup_menu");
+var userPopupText = document.getElementById("user_popup");
+var userPopupMenu = document.getElementById("user_popup_menu");
 
-let mOpen = function(){
-  menu.style.display = "block";
+var mOpen = function(){
+  userPopupMenu.style.display = "block";
 }
-let mClose = function(){
-  menu.style.display = "none";
+var mClose = function(){
+  userPopupMenu.style.display = "none";
 }
 
-text.addEventListener('click', mOpen);
-menu.addEventListener('mouseleave', mClose);
-
+userPopupText.addEventListener('click', mOpen);
+userPopupMenu.addEventListener('mouseleave', mClose);
 </script>

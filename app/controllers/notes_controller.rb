@@ -34,7 +34,7 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to tune_path(@note.tune.id), notice: "ABC譜の登録が完了しました"
     else
-      render "new"
+      render "new", status: :unprocessable_entity
     end
   end
 
@@ -49,7 +49,7 @@ class NotesController < ApplicationController
         redirect_to tune_path(@note.tune.id), notice: "ABC譜を更新しました"
       end
     else
-      render "edit"
+      render "edit", status: :unprocessable_entity
     end
   end
 

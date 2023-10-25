@@ -62,13 +62,12 @@
 
 
 <h4>Recent Update</h4>
-<dl>
+<dl class="m_dl">
   <% @recents.each do |recent| %>
     <dt>
-      <%= link_to recent.tune.name, tune_path(recent.tune), class: "big" %>
+      <%= link_to recent.tune.name, tune_path(recent.tune), class: "big" %>&emsp;<%= recent.tune.rhythm %>
     </dt>
     <dd>
-      <%= recent.tune.rhythm %>&emsp;
       by&nbsp;<%= link_to recent.user.name, tunes_path(user_name: recent.user.name) %>
       <% if recent.user == current_user %>
         <%= link_to "info", user_path(current_user), class: "small" %>

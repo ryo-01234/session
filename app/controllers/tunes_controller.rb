@@ -36,7 +36,7 @@ class TunesController < ApplicationController
     if @tune.save
       redirect_to @tune, notice: "楽曲登録が完了しました"
     else
-      render "new"
+      render "new", status: :unprocessable_entity
     end
   end
 
@@ -46,7 +46,7 @@ class TunesController < ApplicationController
     if @tune.save
       redirect_to @tune, notice: "楽曲情報を更新しました"
     else
-      render "edit"
+      render "edit", status: :unprocessable_entity
     end
   end
 

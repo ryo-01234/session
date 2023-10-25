@@ -19,11 +19,6 @@ header{
   padding: 0;
   margin: 0;
   background-color: #FCD07E;
-/*
-  position : fixed;
-  top: 0;
-  left: 0;
-*/
 }
 
 
@@ -41,6 +36,16 @@ header{
   margin: 0;
   float: right;
   font-size: 0.75em;
+}
+#login_menu{
+  display: block;
+}
+#m_login_menu{
+  height: 5em;
+  padding: 1em;
+  font-size: 1.5em;
+  display: none;
+  box-sizing: border-box;
 }
 #account-menu{
   margin: 1em 0;
@@ -79,6 +84,9 @@ h6{
   margin: 0;
   color: red;
   font-weight: bold;
+}
+header::after{
+  clear: both;
 }
 
 /* ログイン中ヘッダー用 */
@@ -131,6 +139,7 @@ h5{
   margin: 2em 0;
   border-bottom: #00561F solid 3px;
   font-size: 1em;
+  clear: both;
 }
 
 #search_form{
@@ -193,12 +202,12 @@ footer{
   height: 3em;
 }
 #i_menu li{
-  width:20%;
-  height: 3em;
+  width:25%;
+  min-width: 13em;
   text-align: center;
   line-height: 3em;
   float: left;
-  border: 1px solid #00561F;
+  border:  1px solid #00561F;
   border-right: none;
   list-style-type: none;
 }
@@ -213,6 +222,8 @@ footer{
   background-color: #FCD07E;
   color: #fff;
 }
+
+
 
 /* フォーム */
 .form{
@@ -278,7 +289,8 @@ footer{
 }
 
 .table{
-  min-width: 50%;
+  width: 90%;
+  min-width: 30em;
   margin: 2em;
   margin-top: 0;
   border-collapse: collapse;
@@ -306,4 +318,70 @@ a:active{
 
 .clear{
   clear: both;
+}
+
+@media (max-width: 1034px) and (min-width: 768px){
+  #login_menu{
+    display: none;
+  }
+  #m_login_menu{
+    display: block;
+}
+}
+@media (max-width: 767px){
+  header{
+    height: 3em
+  }
+  #logo{
+    height: 3em;
+  }
+  #menu{
+    height: 3em;
+  }
+  h1{
+    font-size: 2em;
+    padding: 0;
+  }
+  #login_menu{
+    display: none;
+  }
+  #m_login_menu{
+    padding: 1em;
+    font-size: 1em;
+    display: block;
+  }
+  #i_menu li{
+    width:90%;
+    height: fit-content;
+    text-align: center;
+    border:  1px solid #00561F;
+    list-style-type: none;
+  }
+  .table{
+    width: 90%;
+    min-width: 0;
+    margin: auto;
+    margin-top: 0;
+    border-collapse: collapse;
+  }
+  .table thead{
+    height: fit-content;
+  }
+  .table tbody td{
+    padding: 0.25em;
+    border-bottom: 2px solid #007d7a;
+  }
+  #search_form{
+    width: fit-content;
+    margin: auto;
+    padding: 1em;
+    line-height: 2em;
+    border: 3px double #39A869;
+  }
+  .m_dl dd{
+    margin-left: 1em;
+  }
+  .m_dl ul{
+    padding-left: 1em;
+  }
 }
