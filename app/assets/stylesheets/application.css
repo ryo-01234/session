@@ -5,7 +5,6 @@ body{
   padding: 0;
   padding-bottom: 3em;
   margin: 0;
-  /* margin-top: 5em; headerでposition: fixed;の場合*/
   background-color: #fff;
   position: relative;
   min-height: 100vh;
@@ -24,8 +23,8 @@ header{
 
 #logo{
   height: 5em;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   float: left;
 }
 #menu{
@@ -56,8 +55,8 @@ header{
 }
 /* サイトタイトル */
 h1{
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   margin-left: 0.5em;
   font-family: serif;
   font-size: 3em;
@@ -174,7 +173,6 @@ nav.pagination{
 /* User画面用 */
 .user_info dt{
   width: fit-content;
-
   margin-bottom: 0.2em;
   border-bottom: 1px solid #39A869;
   font-size: larger;
@@ -246,7 +244,7 @@ footer{
   font-size: 1.5em;
   font-family: serif;
 }
-.error ul,li{
+.error ul, li{
   padding: 0;
   margin: 0;
 }
@@ -330,7 +328,7 @@ a:active{
 }
 @media (max-width: 767px){
   header{
-    height: 3em
+    height: 3em;
   }
   #logo{
     height: 3em;
@@ -351,10 +349,10 @@ a:active{
     display: block;
   }
   #i_menu li{
-    width:90%;
+    width: 90%;
     height: fit-content;
     text-align: center;
-    border:  1px solid #00561F;
+    border: 1px solid #00561F;
     list-style-type: none;
   }
   .table{

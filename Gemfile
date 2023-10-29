@@ -39,6 +39,8 @@ gem "kaminari-i18n"
 
 gem "whenever", require: false
 
+gem "dotenv"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

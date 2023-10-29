@@ -35,5 +35,6 @@ module SessionJp
     config.generators.system_tests = nil
     config.time_zone = "Tokyo"
     config.i18n.default_locale = :ja
+    config.hosts << 'rails-session-jp.onrender.com'
   end
 end
