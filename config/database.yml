@@ -29,4 +29,4 @@ production:
   host: <%= Rails.application.credentials.planetscale&.fetch(:host) %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   ssl_mode: verify_identity
-  sslca: "/etc/ssl/cert.pem"
+  sslca: "/etc/ssl/certs/ca-certificates.crt"
