@@ -41,6 +41,8 @@ gem "whenever", require: false
 
 gem "dotenv"
 
+gem 'mysql2', '~> 0.5.5'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
