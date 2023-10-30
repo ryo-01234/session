@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_24_135345) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_30_131110) do
   create_table "notes", force: :cascade do |t|
     t.integer "tune_id", null: false
     t.integer "user_id", null: false
     t.string "key", null: false
     t.string "scale", null: false
     t.string "status", null: false
-    t.string "abc", null: false
+    t.text "abc", null: false
     t.string "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
